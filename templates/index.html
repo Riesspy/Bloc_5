@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prediction app with Flask</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+</head>
+
+<body>
+    <div>
+        <h1> Prédection de la qualité d'un vin sur la base d'éléments physico-chimiques.  </h1>
+        <p>Pour obtenir le score de qualité d'un vin on a besoin d'une entrée .json avec les informations suivantes pour le vin à noter:
+            <ul>
+              <li>fixed acidity</li>
+              <li> volatile acidity</li>
+              <li> citric acid</li>
+              <li>residual sugar</li>
+              <li> chlorides</li>
+                <li>  free sulfur dioxide</li>
+                  <li>  total sulfur dioxide</li>
+                    <li>  density</li>
+                      <li>  pH</li>
+                        <li>sulphates</li>
+                          <li>alcohol</li>
+                            <li>quality</li>
+            </ul>
+          
+        </div>
+      </div>
+      <hr/>
+      <div class="container-lg">
+          <div class="h2">
+              Interrogez l'api  sur le endpoint <code>/predict</code>
+          </div>
+          Ce point d'accès accepte la méthode POST avec des données d'entrée JSON et doit retourner les prédictions. 
+           
+
+          Il suffit d'envoyer une requête <code>POST</code> sur le endpoint <code>/predict</code> de type :
+          <br>
+          <code>requests.post(/predict, json=input_simple)</code>
+          
+          <div> 
+              <br>
+  
+              response = requests.post("https://wineprojectflask.herokuapp.com//predict", json={
+                  "input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]
+              })
+              <br>
+              <br>
+              print(response.json())
+            </code>
+            <br>
+            <br>
+            ou une requête curl du type
+            <br>
+            <pre-scrollable>
+                <code>
+                    $ curl -i -H "Content-Type: application/json" -X POST -d '{"input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]}' https://wine-quality-prediction-21.herokuapp.com/predict
+
+                </code>
+            </pre-scrollable>
+            
+          </div>
+      </body>
+      
+      </html>
