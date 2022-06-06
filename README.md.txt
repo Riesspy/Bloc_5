@@ -1,4 +1,4 @@
-Lien : https://secure.vidyard.com/organizations/2485381/players/S5x9xxuhU1K7ZXkMWeD1mq?edit=true
+Lien : https://share.vidyard.com/watch/S5x9xxuhU1K7ZXkMWeD1mq?
 
 email : ing.riadh_chamkhi@outlook.com
 
